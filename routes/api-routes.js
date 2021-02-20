@@ -1,5 +1,4 @@
 const db = require('../models');
-const adoptable = require('../models/adoptable');
 
 // Routes
 module.exports = (app) => {
