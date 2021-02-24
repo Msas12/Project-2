@@ -1,23 +1,33 @@
-const db = require('../models');
+// Requiring path to so we can use relative routes to our HTML files
+const path = require('path');
 
+// Requiring our custom middleware for checking if a user is logged in
+const isAuthenticated = require('../config/middleware/isAuthenticated');
 
-// Routes
-module.exports = (app) => {
-  // GET route for getting all of the
+module.exports = function(app) {
   app.get('/', (req, res) => {
-    db.adoptable.findAll({}).then((result) => res.json(result));
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect('/members');
+    }
+    res.sendFile(path.join(__dirname, '../public/signup.html'));
   });
 
-  // POST route for saving a new dog. You can create a dog using the data on req.body
-  app.post('/api/dog', (req, res) => {
-    db.Dog.create({
-      text: req.body.text,
-      complete: req.body.complete,
-    }).then((dbTodo) => res.json(dbTodo));
+  app.get('/login', (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect('/members');
+    }
+    res.sendFile(path.join(__dirname, '../public/login.html'));
   });
 
-  // PUT route for updating todos. The updated todo will be available in req.body
-  //   app.put('/api/dog', (req, res) => {
+  // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  app.get('/members', isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/members.html'));
+  });
 
-//   });
+  app.get('/adddog', isAuthenticated, (req, res) => {
+    res.send('You are logged in and you can add a dog for adoption!')
+  })
 };
