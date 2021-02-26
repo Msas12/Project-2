@@ -29,3 +29,11 @@ CREATE TABLE adopted (
     adopted BOOLEAN DEFAULT true,
     PRIMARY KEY (id)
 );
+
+
+
+
+-- -- Drops the blogger if it exists currently --
+-- DROP DATABASE IF EXISTS blogger;
+-- -- Creates the "blogger" database --
+-- CREATE DATABASE blogger;
