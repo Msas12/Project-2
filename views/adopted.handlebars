@@ -21,3 +21,29 @@
         </div>
     </div>
 </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header text-light text-center">
+                    <h2>Dogs Available to Adopt</h2>
+                </div>
+                <div class="card">
+                    <div class="card-header text-light text-center">
+                        <h2>Available Dogs:</h2>
+                    </div>
+                    <div class="card-body text-center">
+                        <ul>
+                            {{#each Adoptable}}
+                            {{#if adopted}}
+                            {{> dogs/dogs-block adopted=false}}
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

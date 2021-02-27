@@ -15,27 +15,27 @@ html, body {
   .cool-font {
     font-family: 'Courier New', Courier, cursive;
     font-size: 24px;
-    color: #561df2;
+    color: #440fd6;
   }
   
   .jumbotron {
     font-family: 'Courier New', Courier, cursive;
     color: white;
-    background-color: #561df2;
+    background-color: #440fd6;
   }
   
   input,
   textarea {
     margin: 20px;
-    border-radius: 5px;
+    border-radius: 15px;
   }
   
   .btn {
     margin: 10px;
     font-family: 'Courier New', Courier, cursive;
-    color: #561df2;
+    color: #440fd6;
     background-color: white;
-    border-color: #561df2;
+    border-color: #440fd6;
     border-style: solid;
     border-width: 3px;
   }
@@ -45,7 +45,20 @@ html, body {
     font-size: 16px;
   }
 
-  /* .love {
-    background-color: ;
+  .dogname, .tellstory, .love {
+    font-family: 'Courier New', Courier, cursive;
+    color: white;
+    background-color: #440fd6;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: 600;
+    padding: 10px;
   }
-   */
+
+  
+
+  .successful {
+    font-weight: 700;
+    font-size: 80px;
+  }
+  

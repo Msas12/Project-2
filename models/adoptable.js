@@ -7,10 +7,6 @@ module.exports = (sequelize, DataTypes) => {
     gender: DataTypes.STRING,
     temper: DataTypes.STRING,
     spayed: DataTypes.BOOLEAN,
-    pending: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
-    },
     adopted: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
