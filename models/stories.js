@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
-  const Chirp = sequelize.define('Chirp', {
-    author: DataTypes.STRING,
+  const Stories = sequelize.define('Stories', {
+    dogName: DataTypes.STRING,
     body: DataTypes.STRING,
     created_at: DataTypes.DATE,
   });
-  return Chirp
+  return Stories
 }

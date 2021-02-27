@@ -23,7 +23,7 @@ CREATE TABLE pending (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE adopted (
+CREATE TABLE success (
     id INT AUTO_INCREMENT NOT NULL,
     dogName VARCHAR(255),
     adopted BOOLEAN DEFAULT true,

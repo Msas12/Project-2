@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-  const Adopted = sequelize.define('Adoptable', {
+  const Success = sequelize.define('Success', {
     dogName: DataTypes.STRING,
     adopted: DataTypes.BOOLEAN,
   })
-  return Adopted
+  return Success
 }
