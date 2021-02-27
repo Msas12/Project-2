@@ -1,0 +1,76 @@
+{{!-- Navbar Information --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Adopt Don't Shop!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Adoptable</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/adopted">Adopted</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/success">Success Stories</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <form>
+                <div class="mb-3">
+                    <label for="InputDogName" class="form-label">Dog's Name:</label>
+                    <input type="text" class="form-control" id="InputDogName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputDogAge" class="form-label">Dog's Age:</label>
+                    <input type="text" class="form-control" id="InputDogAge">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputDogBreed" class="form-label">Dog's Breed:</label>
+                    <input type="text" class="form-control" id="InputDogBreed">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputDogGender" class="form-label">Dog's Gender:</label>
+                    <input type="text" class="form-control" id="InputDogGender">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputDogTemper" class="form-label">Dog's Temper:</label>
+                    <input type="text" class="form-control" id="InputDogTemper">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputDogSpayed" class="form-label">Dog's Spayed:</label>
+                    <input type="text" class="form-control" id="InputDogSpayed">
+                </div>
+
+                <div class="mb-3">
+                    <label for="InputDogPending" class="form-label">Dog's Pending:</label>
+                    <input type="text" class="form-control" id="InputDogPending">
+                </div>
+
+
+                {{!-- Upload Image of Dog --}}
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

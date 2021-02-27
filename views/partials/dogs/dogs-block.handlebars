@@ -1,0 +1,9 @@
+<li>
+    <h4>{{dogName}}</h4>
+
+    <button type="button" class="btn btn-secondary change-devoured" data-id="{{id}}" data-newdevoured="{{adopted}}">
+        {{#if adopted}}Save!{{else}}I want to adopt!{{/if}}
+    </button>
+
+    <button type="button" class="btn btn-danger delete-burger" data-id="{{this.id}}">Delete!</button>
+</li>

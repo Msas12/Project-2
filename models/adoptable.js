@@ -6,8 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     gender: DataTypes.STRING,
     temper: DataTypes.STRING,
     spayed: DataTypes.BOOLEAN,
+    adopted: DataTypes.BOOLEAN,
     pending: DataTypes.BOOLEAN
-  });
-  return Adoptable;
-};
+  })
+  return Adoptable
+}
 
