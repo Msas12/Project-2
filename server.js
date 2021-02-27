@@ -35,7 +35,7 @@ app.use(passport.session());
 // Invoke routes
 require('./routes/html-routes.js')(app);
 require('./routes/api-routes.js')(app);
-//require('./routes/multer-routes.js')(app);
+require('./routes/multer-routes.js')(app);
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync().then(() => {

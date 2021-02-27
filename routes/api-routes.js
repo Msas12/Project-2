@@ -26,7 +26,7 @@ module.exports = function(app) {
     console.log(req.body);
 
     Stories.create({
-      dogName: req.body.author,
+      dogName: req.body.dog,
       body: req.body.body,
       created_at: req.body.created_at,
       // `results` here would be the newly created stories

@@ -1,15 +1,20 @@
-/*module.exports = function (app) {
+// Requiring Multer
+const multer = require('multer');
+
+const path = require('path')
+
+module.exports = function (app) {
   // Set Multer Storage Engine
-  const storage = multer.diskStorage({
-    destination: './public/uploads/',
+  const dest = multer.diskStorage({
+    destination: function(req, file, cb) {cb(null, './public/uploads/')},
     filename: function (req, file, cb) {
-      cb(null, file.filedname + '-' + Date.now() + path.extname(file.originalname));
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
   })
 
   // Initialize Upload
   const upload = multer({
-    storage: storage,
+    storage: dest,
     limits: { fileSize: 1000000 },
     fileFilter: function (req, file, cb) {
       checkFileType(file, cb);
@@ -32,28 +37,22 @@
   }
 
   // Get
-  app.get('/', (req, res) => res.render('index'));
+  app.get('/adddog', (req, res) => res.render('index'));
 
   // Post
-  app.post('/upload', (req, res) => {
-    upload(req, res, (err) => {
-      if (err) {
-        res.render('index', {
-          msg: err
-        })
-      } else {
-        if (req.file == undefined) {
-          res.render('index', {
-            msg: 'Error: no file selected'
-          });
-        } else {
-          res.render('index', {
-            msg: 'File Uploaded!',
-            file: `uploads/${req.file.filename}`
-          })
-        }
-      }
-    })
+  app.post('/upload', upload, (req, res) => {
+    console.log(req.body)
+    if (req.file === undefined) {
+      res.render('index', {
+        msg: 'Error: no file selected'
+      });
+    } else {
+      res.render('index', {
+        msg: 'File Uploaded!',
+        file: `uploads/${req.file.filename}`,
+        destination: req.file.destination
+      })
+    }
+
   })
 }
-*/

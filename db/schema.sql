@@ -6,27 +6,22 @@ USE adoption_db;
 CREATE TABLE adoptable (
     id INT AUTO_INCREMENT NOT NULL,
     dogName VARCHAR(255),
+    img VARCHAR(255),
     age INT NOT NULL,
     breed VARCHAR(255) NOT NULL,
     gender VARCHAR(10) NOT NULL,
     temper VARCHAR(255) NOT NULL,
     spayed BOOLEAN DEFAULT false,
     pending BOOLEAN DEFAULT false,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE pending (
-    id INT AUTO_INCREMENT NOT NULL,
-    dogName VARCHAR(255),
-    pending BOOLEAN DEFAULT true,
     adopted BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE success (
+CREATE TABLE stories (
     id INT AUTO_INCREMENT NOT NULL,
     dogName VARCHAR(255),
-    adopted BOOLEAN DEFAULT true,
+    body BOOLEAN DEFAULT true,
+    created_at DATE,
     PRIMARY KEY (id)
 );
 
