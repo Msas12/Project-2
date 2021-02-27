@@ -19,15 +19,13 @@ module.exports = function(app) {
   });
 
   app.get('/login', (req, res) => {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the adddog page
     if (req.user) {
       res.redirect('/adddog');
     }
     res.sendFile(path.join(__dirname, '../public/login.html'));
   });
 
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/adddog', isAuthenticated, (req, res) => {
     res.render('add-dog');
   });

@@ -15,21 +15,21 @@ module.exports = function(app) {
   });
 
   app.get('/api/all', (req, res) => {
-    // Finding all Chirps, and then returning them to the user as JSON.
+    // Finding all success stories, and then returning them to the user as JSON.
     // Sequelize queries are asynchronous and results are available to us inside the .then
-    Chirp.findAll({}).then((results) => res.json(results));
+    Stories.findAll({}).then((results) => res.json(results));
   });
 
-  // Add a chirp
+  // Add a success story
   app.post('/api/new', (req, res) => {
-    console.log('Chirp Data:');
+    console.log('Stories Data:');
     console.log(req.body);
 
-    Chirp.create({
-      author: req.body.author,
+    Stories.create({
+      dogName: req.body.dog,
       body: req.body.body,
       created_at: req.body.created_at,
-      // `results` here would be the newly created chirp
+      // `results` here would be the newly created stories
     }).then((results) => res.json(results));
   })
 

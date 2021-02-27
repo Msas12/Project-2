@@ -1,38 +1,51 @@
-.chirp {
+html, body { 
+  background: url(/assets/imgs/bg-photo.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.stories {
     padding: 10px;
     margin: 10px;
     background-color: #e8f9ff;
   }
   
   .cool-font {
-    font-family: Shrikhand, cursive;
+    font-family: 'Courier New', Courier, cursive;
     font-size: 24px;
-    color: #1da1f2;
+    color: #561df2;
   }
   
   .jumbotron {
-    font-family: Shrikhand, cursive;
+    font-family: 'Courier New', Courier, cursive;
     color: white;
-    background-color: #1da1f2;
+    background-color: #561df2;
   }
   
   input,
   textarea {
     margin: 20px;
+    border-radius: 5px;
   }
   
   .btn {
     margin: 10px;
-    font-family: Shrikhand, cursive;
-    color: #1da1f2;
+    font-family: 'Courier New', Courier, cursive;
+    color: #561df2;
     background-color: white;
-    border-color: #1da1f2;
+    border-color: #561df2;
     border-style: solid;
-    border-width: 2px;
+    border-width: 3px;
   }
   
   p {
     margin: 0;
     font-size: 16px;
   }
-  
+
+  /* .love {
+    background-color: ;
+  }
+   */

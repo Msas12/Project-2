@@ -1,14 +1,37 @@
+html, body { 
+  background: url(/assets/imgs/bg-photo.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
 }
+
 
 footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(8, 210, 224);
+  background-color:  rgb(18, 65, 66);
   color: white;
   text-align: center;
+}
+
+.card-body {
+  background-color: rgb(178, 231, 233);
+  border-radius: 2px;
+  font-family: 'Courier New', Courier, cursive;
+}
+
+.card-header {
+  background-color: rgb(18, 65, 66);
+  border-radius: 2px;
+  font-family: 'Courier New', Courier, cursive;
+  font-size: larger;
+  font-weight: bolder;
 }

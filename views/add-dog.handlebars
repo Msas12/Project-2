@@ -24,53 +24,58 @@
 
 <div class="container">
     <div class="row">
-        <div class="card">
-            <form>
+        <div class="card mt-5">
+            <form id="adddogPhoto" action="/upload" enctype="multipart/form-data" method="POST">
                 <div class="mb-3">
                     <label for="InputDogName" class="form-label">Dog's Name:</label>
-                    <input type="text" class="form-control" id="InputDogName">
+                    <input type="text" name="dogName" class="form-control" id="InputDogName">
                 </div>
 
                 <div class="mb-3">
-                    <label for="InputDogAge" class="form-label">Dog's Age:</label>
-                    <input type="text" class="form-control" id="InputDogAge">
+                    <label for="InputDogAge" class="form-label">Age:</label>
+                    <input type="text" name="dogAge" class="form-control" id="InputDogAge">
                 </div>
 
                 <div class="mb-3">
-                    <label for="InputDogBreed" class="form-label">Dog's Breed:</label>
-                    <input type="text" class="form-control" id="InputDogBreed">
+                    <label for="InputDogBreed" class="form-label">Breed:</label>
+                    <input type="text" name="dogBreed" class="form-control" id="InputDogBreed">
                 </div>
 
                 <div class="mb-3">
-                    <label for="InputDogGender" class="form-label">Dog's Gender:</label>
-                    <input type="text" class="form-control" id="InputDogGender">
+                    <label for="InputDogTemper" class="form-label">Temper:</label>
+                    <input type="text" name="dogTemper" class="form-control" id="InputDogTemper">
                 </div>
 
                 <div class="mb-3">
-                    <label for="InputDogTemper" class="form-label">Dog's Temper:</label>
-                    <input type="text" class="form-control" id="InputDogTemper">
+                    <label for="InputDogGender" class="form-label">Gender:</label>
+                    <select class="form-select" name="dogName" id="InputDogGender" aria-label="Default select example">
+                        <option selected>Gender</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
                 </div>
 
                 <div class="mb-3">
-                    <label for="InputDogSpayed" class="form-label">Dog's Spayed:</label>
-                    <input type="text" class="form-control" id="InputDogSpayed">
-                </div>
-
-                <div class="mb-3">
-                    <label for="InputDogPending" class="form-label">Dog's Pending:</label>
-                    <input type="text" class="form-control" id="InputDogPending">
+                    <label for="InputDogSpayed" class="form-label">Spayed/Neutered:</label>
+                    <select class="form-select" name="dogSpayed" id="InputDogSpayed"
+                        aria-label="Default select example">
+                        <option selected>Spayed/Neutered (Yes or No)</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
                 </div>
 
 
                 {{!-- Upload Image of Dog --}}
                 <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputGroupFile02">
-                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                    <input name="myImage" type="file" class="form-control" id="inputGroupFile02">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
             </form>
         </div>
 
     </div>
 
 </div>
+
+<script src="/assets/js/add-dog.js"></script>
