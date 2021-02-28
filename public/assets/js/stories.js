@@ -1,3 +1,5 @@
+
+
 // When user clicks add-btn
 const submitStoriesBtn = document.getElementById('stories-submit');
 submitStoriesBtn.addEventListener('click', (e) => {
@@ -7,7 +9,7 @@ submitStoriesBtn.addEventListener('click', (e) => {
   const newStories = {
     dog: document.getElementById('dog').value.trim(),
     body: document.getElementById('stories-box').value.trim(),
-    created_at: new Date(),
+    created_at: new Date().toISOString().slice(0, 19).replace('T', ' '),
   };
 
   fetch('/api/new', {
@@ -47,8 +49,8 @@ submitStoriesBtn.addEventListener('click', (e) => {
   document.getElementById('stories-box').value = '';
 });
 
-// When the page loads, grab and display all "storiess"
-// Send the GET request with the fetch API (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+// When the page loads, grab and display all "stories"
+// Send the GET request with the fetch API
 
 fetch('/api/all', {
   method: 'GET',

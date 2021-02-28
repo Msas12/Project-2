@@ -1,9 +1,28 @@
-<li>
-    <h4>{{dogName}}</h4>
-
-    <button type="button" class="btn btn-secondary change-devoured" data-id="{{id}}" data-newdevoured="{{adopted}}">
-        {{#if adopted}}Save!{{else}}I want to adopt!{{/if}}
-    </button>
-
-    <button type="button" class="btn btn-danger delete-burger" data-id="{{this.id}}">Delete!</button>
-</li>
+<div class="card mb-3 mx-auto">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img class="w-100 h-100" src="uploads/{{img}}" alt="Photo of Available Dog">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body h-100">
+                <h5 class="card-title">{{dogName}}</h5>
+                <p class="card-text">
+                    Age: {{age}}
+                    <br>
+                    Breed: {{breed}}
+                    <br>
+                    Sex: {{gender}}
+                    <br>
+                    Temperament: {{temper}}
+                    <br>
+                    Spayed/Neutered: {{spayed}}
+                </p>
+                <p class="card-text"><small class="">Last updated {{updatedAt}}</small></p>
+                <button type="button" class="btn btn-secondary change-adopted" data-id="{{id}}"
+                    data-newAdoptionStatus="{{adopted}}">
+                    {{#if adopted}}❤{{else}}I want to adopt!{{/if}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,7 +3,7 @@ CREATE database adoption_db;
 
 USE adoption_db;
 
-CREATE TABLE adoptable (
+CREATE TABLE Adoptables (
     id INT AUTO_INCREMENT NOT NULL,
     dogName VARCHAR(255),
     img VARCHAR(255),
@@ -11,24 +11,18 @@ CREATE TABLE adoptable (
     breed VARCHAR(255) NOT NULL,
     gender VARCHAR(10) NOT NULL,
     temper VARCHAR(255) NOT NULL,
-    spayed BOOLEAN DEFAULT false,
-    pending BOOLEAN DEFAULT false,
+    spayed BOOLEAN,
     adopted BOOLEAN DEFAULT false,
+    createdAt DATETIME,
+    updatedAt DATETIME,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE stories (
+CREATE TABLE Stories (
     id INT AUTO_INCREMENT NOT NULL,
     dogName VARCHAR(255),
-    body BOOLEAN DEFAULT true,
-    created_at DATE,
+    body TEXT NOT NULL,
+    createdAt DATETIME,
+    updatedAt DATETIME,
     PRIMARY KEY (id)
 );
-
-
-
-
--- -- Drops the blogger if it exists currently --
--- DROP DATABASE IF EXISTS blogger;
--- -- Creates the "blogger" database --
--- CREATE DATABASE blogger;

@@ -1,7 +1,8 @@
 // Requiring Multer
 const multer = require('multer');
 
-const path = require('path')
+const path = require('path');
+const db = require('../models');
 
 module.exports = function (app) {
   // Set Multer Storage Engine
@@ -15,7 +16,7 @@ module.exports = function (app) {
   // Initialize Upload
   const upload = multer({
     storage: dest,
-    limits: { fileSize: 1000000 },
+    limits: { fileSize: 10000000 },
     fileFilter: function (req, file, cb) {
       checkFileType(file, cb);
     }
@@ -41,17 +42,26 @@ module.exports = function (app) {
 
   // Post
   app.post('/upload', upload, (req, res) => {
-    console.log(req.body)
     if (req.file === undefined) {
       res.render('index', {
         msg: 'Error: no file selected'
       });
     } else {
-      res.render('index', {
-        msg: 'File Uploaded!',
-        file: `uploads/${req.file.filename}`,
-        destination: req.file.destination
-      })
+      db.Adoptable.create({
+        dogName: req.body.dogName,
+        img: req.file.filename,
+        age: req.body.dogAge,
+        breed: req.body.dogBreed,
+        gender: req.body.dogGender,
+        temper: req.body.dogTemper,
+        spayed: req.body.dogSpayed,
+        adopted: req.body.dogAdopted
+      }).then(
+        res.render('index', {
+          msg: 'File Uploaded!',
+          file: `uploads/${req.file.filename}`,
+          destination: req.file.destination
+        }))
     }
 
   })

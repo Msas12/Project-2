@@ -15,7 +15,11 @@ module.exports = function(app) {
   });
 
   app.get('/', (req, res) => {
-    db.Adoptable.findAll({}).then((result) => res.render('index', {adpotable: result}));
+    db.Adoptable.findAll({}).then((dogs) => {
+      const hbObject = dogs.map((dog) => dog.toJSON())
+      console.log(hbObject)
+      res.render('index', {adoptable: hbObject})
+    });
   });
 
   app.get('/login', (req, res) => {
@@ -35,6 +39,10 @@ module.exports = function(app) {
   });
 
   app.get('/adopted', (req, res) => {
-    res.render('adopted');
+    db.Adoptable.findAll({}).then((dogs) => {
+      const hbObject = dogs.map((dog) => dog.toJSON())
+      console.log(hbObject)
+      res.render('adopted', {adoptable: hbObject})
+    });
   });
 };
