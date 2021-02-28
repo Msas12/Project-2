@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     spayed: DataTypes.BOOLEAN,
     adopted: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false
+      // defaultValue: false
     }
   })
   return Adoptable

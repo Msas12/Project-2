@@ -16,7 +16,7 @@ module.exports = function (app) {
   // Initialize Upload
   const upload = multer({
     storage: dest,
-    limits: { fileSize: 1000000 },
+    limits: { fileSize: 10000000 },
     fileFilter: function (req, file, cb) {
       checkFileType(file, cb);
     }
@@ -49,12 +49,13 @@ module.exports = function (app) {
     } else {
       db.Adoptable.create({
         dogName: req.body.dogName,
-        img: req.body.myImage,
+        img: req.file.filename,
         age: req.body.dogAge,
         breed: req.body.dogBreed,
         gender: req.body.dogGender,
         temper: req.body.dogTemper,
         spayed: req.body.dogSpayed,
+        adopted: req.body.dogAdopted
       }).then(
         res.render('index', {
           msg: 'File Uploaded!',

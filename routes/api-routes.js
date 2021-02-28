@@ -15,26 +15,6 @@ module.exports = function(app) {
     });
   });
 
-  // app.get('/api/all', (req, res) => {
-  //   // Finding all success stories, and then returning them to the user as JSON.
-  //   // Sequelize queries are asynchronous and results are available to us inside the .then
-  //   Stories.findAll({}).then((results) => res.json(results));
-  // });
-
-  // // Add a success story
-  // app.post('/api/new', (req, res) => {
-  //   console.log('Stories Data:');
-  //   console.log(req.body);
-
-  //   Stories.create({
-  //     dogName: req.body.dog,
-  //     body: req.body.body,
-  //     created_at: req.body.created_at,
-  //     // `results` here would be the newly created stories
-  //   }).then((results) => res.json(results));
-  // })
-
-
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -56,6 +36,9 @@ module.exports = function(app) {
     req.logout();
     res.redirect('/');
   });
+
+
+  // ----------------------------STORIES---------------------------------
 
   // Get all stories
   app.get('/api/all', (req, res) => {
@@ -87,6 +70,25 @@ module.exports = function(app) {
       }
     );
   });
+
+  // app.get('/api/all', (req, res) => {
+  //   // Finding all success stories, and then returning them to the user as JSON.
+  //   // Sequelize queries are asynchronous and results are available to us inside the .then
+  //   Stories.findAll({}).then((results) => res.json(results));
+  // });
+
+  // // Add a success story
+  // app.post('/api/new', (req, res) => {
+  //   console.log('Stories Data:');
+  //   console.log(req.body);
+
+  //   Stories.create({
+  //     dogName: req.body.dog,
+  //     body: req.body.body,
+  //     created_at: req.body.created_at,
+  //     // `results` here would be the newly created stories
+  //   }).then((results) => res.json(results));
+  // })
 
 
   // Route for posting dogs to main page

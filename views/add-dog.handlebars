@@ -62,16 +62,26 @@
                         aria-label="Default select example">
                         <option selected>Spayed/Neutered (Yes or No)</option>
                         <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="0">No</option>
                     </select>
                 </div>
 
+                <div class="mb-3">
+                    <label for="InputDogAdopted" class="form-label">Adopted:</label>
+                    <select class="form-select" name="dogAdopted" id="InputDogAdopted"
+                        aria-label="Default select example">
+                        <option selected>Adopted (Yes or No)</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
 
                 {{!-- Upload Image of Dog --}}
                 <div class="input-group mb-3">
                     <input name="myImage" type="file" class="form-control" id="inputGroupFile02">
                 </div>
-                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+
+                <button type="submit" id="addSubmitBtn" class="btn btn-primary mb-3">Submit</button>
             </form>
         </div>
 

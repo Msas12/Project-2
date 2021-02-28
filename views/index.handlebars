@@ -28,7 +28,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 mx-auto">
+    <div class="col-md-12 mx-auto">
       <div class="card">
         <div class="card-header text-light text-center">
           <h2>Dogs Available to Adopt</h2>
@@ -37,12 +37,12 @@
           <div class="card-header text-light text-center">
             <h2>Available Dogs:</h2>
           </div>
-          <div class="card-body text-center">
+          <div class="card-body fs-3 my-auto text-center">
             <ul>
-              {{#each Adoptable}}
-              {{#if adopted}}
+              {{#each adoptable}}
+              {{#unless adopted}}
               {{> dogs/dogs-block adopted=false}}
-              {{/if}}
+              {{/unless}}
               {{/each}}
             </ul>
           </div>
