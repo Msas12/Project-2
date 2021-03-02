@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require('../models');
 const passport = require('../config/passport');
-const connection = require('../config/connection.js');
+
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -39,59 +39,45 @@ module.exports = function(app) {
 
 
   // ----------------------------STORIES---------------------------------
-
-  // Get all stories
   app.get('/api/all', (req, res) => {
-    const dbQuery = 'SELECT * FROM Stories';
-
-    connection.query(dbQuery, (err, result) => {
-      if (err) {throw err;}
-      res.json(result);
-    });
+    // Finding all success stories, and then returning them to the user as JSON.
+    // Sequelize queries are asynchronous and results are available to us inside the .then
+    db.Stories.findAll({}).then((results) => res.json(results));
   });
 
-  // Add a story
+  // Add a success story
   app.post('/api/new', (req, res) => {
-    console.log('Story Data:');
+    console.log('Stories Data:');
     console.log(req.body);
 
-    const dbQuery =
-        'INSERT INTO Stories (dogName, body, created_at) VALUES (?,?,?)';
+    db.Stories.create({
+      dogName: req.body.dog,
+      body: req.body.body,
+      // created_at: req.body.created_at,
+      // `results` here would be the newly created stories
+    }).then((results) => res.json(results));
+  })
 
-    connection.query(
-      dbQuery,
-      [req.body.dogName, req.body.body, req.body.created_at],
-      (err, result) => {
-        if (err) {throw err;}
-        if (result) {
-          console.log('Story Successfully Saved!');
-          res.json(req.body);
+  //------------------------------Adopt-A-Dog-----------------------------------
+  app.put('/api/dogs/:id', (req, res) => {
+    const condition = `id = ${req.params.id}`;
+
+    console.log('condition', condition);
+
+    db.Adoptable.update(
+      {
+        devoured: req.body.adopted,
+      },
+      condition,
+      (result) => {
+        if (result.changedRows === 0) {
+          // If no rows were changed, then the ID must not exist, so 404
+          return res.status(404).end();
         }
+        res.status(200).end();
       }
     );
   });
-
-  // app.get('/api/all', (req, res) => {
-  //   // Finding all success stories, and then returning them to the user as JSON.
-  //   // Sequelize queries are asynchronous and results are available to us inside the .then
-  //   Stories.findAll({}).then((results) => res.json(results));
-  // });
-
-  // // Add a success story
-  // app.post('/api/new', (req, res) => {
-  //   console.log('Stories Data:');
-  //   console.log(req.body);
-
-  //   Stories.create({
-  //     dogName: req.body.dog,
-  //     body: req.body.body,
-  //     created_at: req.body.created_at,
-  //     // `results` here would be the newly created stories
-  //   }).then((results) => res.json(results));
-  // })
-
-
-  // Route for posting dogs to main page
 
 
 };

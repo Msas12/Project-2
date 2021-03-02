@@ -44,26 +44,28 @@
         <h1 class="text-center successful">Successful Adoptions!</h1>
     </div>
 
-    <div class="container">
+    <div class="container text-center">
 
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <p class="dogname cool-font">Dog's Name</p>
-                <input class="form-control" type="text" id="dog" placeholder="Enter Your Dog's Name">
-                <br>
+            <div class="col-md-12">
                 <p class="tellstory cool-font">Tell your story...</p>
-                <textarea class="form-control" rows="3" id="stories-box" placeholder="Enter stories Here!"></textarea>
-                <button id="stories-submit" class="btn btn-lg pull-right">Submit!</button>
+                <textarea class="form-control mx-auto" rows="5" id="stories-box"
+                    placeholder="Enter stories Here!"></textarea>
+                <br>
+                <p class="dogname cool-font">Your Dog's Name</p>
+                <input class="form-control mx-auto" type="text" id="dog" placeholder="Enter Your Dog's Name">
+                <button id="stories-submit" class="btn btn-lg pull-right mx-auto mb-5">Submit!</button>
             </div>
         </div>
 
         <div class="row">
-
-            <div class="container">
+            <div class="container mt-5">
                 <p class="love cool-font">💜 The Stories we Love 💜</p>
             </div>
 
-            <div id="stories-area"></div>
+            <div id="stories-area" class="col-md-12 mx-auto">
+                <!-- Stories get dumped here -->
+            </div>
         </div>
 
     </div>

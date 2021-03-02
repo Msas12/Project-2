@@ -26,17 +26,15 @@ submitStoriesBtn.addEventListener('click', (e) => {
       const storiesArea = document.getElementById('stories-area');
       row.classList.add('stories');
 
-      const dogName = document.createElement('p');
+      const dogsName = document.createElement('p');
       const storiesBody = document.createElement('p');
       const storiesDate = document.createElement('p');
 
-      dogName.textContent = `${data.dog} stories: `;
-      storiesBody.textContent = `${data.body}`;
-      storiesDate.textContent = `At ${new Date(
-        data.created_at
-      ).toLocaleDateString()}`;
+      dogsName.textContent = `Dog's Name: ${data.dogName}`;
+      storiesBody.textContent = `Success Story: ${data.body}`;
+      storiesDate.textContent = `Created on: ${new Date(data.createdAt).toLocaleDateString()}`;
 
-      row.appendChild(dogName);
+      row.appendChild(dogsName);
       row.appendChild(storiesBody);
       row.appendChild(storiesDate);
 
@@ -61,19 +59,19 @@ fetch('/api/all', {
   .then((response) => response.json())
   .then((data) => {
     console.log('Successful GET all stories:', data);
-    data.map(({ dog, body, created_at }) => {
+    data.map(({ dogName, body, createdAt }) => {
       const row = document.createElement('div');
       const storiesArea = document.getElementById('stories-area');
       row.classList.add('stories');
 
-      const dogName = document.createElement('p');
+      const dogsName = document.createElement('p');
       const storiesBody = document.createElement('p');
       const storiesDate = document.createElement('p');
-      dogName.textContent = `${dog} stories: `;
-      storiesBody.textContent = `${body}`;
-      storiesDate.textContent = `At ${new Date(created_at).toLocaleDateString()}`;
+      dogsName.textContent = `Dog's Name: ${dogName}`;
+      storiesBody.textContent = `Sucess Story: ${body}`;
+      storiesDate.textContent = `Created on: ${new Date(createdAt).toLocaleDateString()}`;
 
-      row.appendChild(dogName);
+      row.appendChild(dogsName);
       row.appendChild(storiesBody);
       row.appendChild(storiesDate);
 
