@@ -1,12 +1,14 @@
-<div class="card mb-3 mx-auto">
+<div class="card mb-3 mx-auto bg-dark">
     <div class="row g-0">
         <div class="col-md-4">
             <img class="w-100 h-100" src="uploads/{{img}}" alt="Photo of Available Dog">
         </div>
         <div class="col-md-8">
-            <div class="card-body h-100">
-                <h5 class="card-title">{{dogName}}</h5>
-                <p class="card-text">
+            <div class="card-header fs-3 text-light">
+                {{dogName}}
+            </div>
+            <div class="card-body h-75 bg-dark">
+                <p class="card-text text-light fs-4">
                     Age: {{age}}
                     <br>
                     Breed: {{breed}}
@@ -17,11 +19,19 @@
                     <br>
                     Spayed/Neutered: {{spayed}}
                 </p>
-                <p class="card-text"><small class="">Last updated {{updatedAt}}</small></p>
-                <button type="button" class="btn btn-secondary change-adopted" data-id="{{id}}"
-                    data-newAdoptionStatus="{{adopted}}">
-                    {{#if adopted}}❤{{else}}I want to adopt!{{/if}}
+                {{#if adopted}}
+                {{!-- <button type="button" class="btn btn-secondary mb-5 fs-5" data-id="{{id}}"
+                    data-newAdoptionStatus="{{adopted}}">❤
+                </button> --}}
+                {{else}}
+                <button type="button" class="btn btn-secondary change-adopted mb-5 fs-5" data-id="{{id}}"
+                    data-newAdoptionStatus="{{adopted}}">Adopt Now!
                 </button>
+                {{/if}}
+
+                <div class="mt-5">
+                    <p class="card-text text-light"><small class="fs-6">Last updated {{updatedAt}}</small></p>
+                </div>
             </div>
         </div>
     </div>
