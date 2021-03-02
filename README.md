@@ -23,7 +23,7 @@
 
 ## Installation
 Link to website:
-[Web App Link]()
+[Web App Link](https://project2msksmh.herokuapp.com/)
 
 ## Usage 
 In order to deploy the app from the back end, must install the following dependencies:  bcrypt, bcryptjs, eslint, express, express-handlebars, express-session, multer, mysql, mysql2, nodemon, passport, passport-local, sequelize 
@@ -40,5 +40,5 @@ NodeJS
 
 ## Questions?
 - https://github.com/Msas12/Project-2
-- Contributers: m5455y@gmail.com  kmsaunders7@gmail.com  
+- Contributors: m5455y@gmail.com  kmsaunders7@gmail.com  
 mahoward2s@gmail.com
