@@ -40,4 +40,5 @@ NodeJS
 
 ## Questions?
 - https://github.com/Msas12/Project-2
-- Contributers: m5455y@gmail.com  kmsaunders7@gmail.com  (MATT's EMAIL)
+- Contributers: m5455y@gmail.com  kmsaunders7@gmail.com  
+mahoward2s@gmail.com
