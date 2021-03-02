@@ -1,6 +1,5 @@
 # ADOPT DONT SHOP
 
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
@@ -27,7 +26,7 @@ Link to website:
 [Web App Link]()
 
 ## Usage 
-In order to deploy the app from the back end, must install the following dependencies:  
+In order to deploy the app from the back end, must install the following dependencies:  bcrypt, bcryptjs, eslint, express, express-handlebars, express-session, multer, mysql, mysql2, nodemon, passport, passport-local, sequelize 
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
