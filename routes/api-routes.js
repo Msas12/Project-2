@@ -24,7 +24,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(() => {
-        res.status(200);
+        res.status(200).end();
       })
       .catch(err => {
         res.status(401).json(err);
