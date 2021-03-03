@@ -26,6 +26,7 @@ module.exports = function(app) {
     // If the user already has an account send them to the adddog page
     if (req.user) {
       res.redirect('/adddog');
+      return
     }
     res.sendFile(path.join(__dirname, '../public/login.html'));
   });
