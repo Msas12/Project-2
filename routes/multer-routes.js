@@ -49,7 +49,7 @@ module.exports = function (app) {
     } else {
       db.Adoptable.create({
         dogName: req.body.dogName,
-        img: req.file.filename,
+        img: `uploads/${req.file.filename}`,
         age: req.body.dogAge,
         breed: req.body.dogBreed,
         gender: req.body.dogGender,
