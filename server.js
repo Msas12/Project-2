@@ -4,6 +4,7 @@ const session = require('express-session');
 const passport = require('./config/passport');
 // Requiring Multer
 const multer = require('multer');
+const compression = require('compression')
 
 // Sets up the Express App
 const app = express();
@@ -14,7 +15,10 @@ const db = require('./models');
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json())
+
+// compress all responses
+app.use(compression())
 
 // Set Handlebars.
 const exphbs = require('express-handlebars');
